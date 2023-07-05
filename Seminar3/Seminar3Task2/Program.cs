@@ -1,20 +1,19 @@
 ﻿// Напишите программу, которая принимает на вход координаты двух точек и находит расстояние между ними в 3D пространстве.
 
-Console.WriteLine("\n Задача 21");
-int x1 = Coordinate("x", "A");
-int y1 = Coordinate("y", "A");
-int z1 = Coordinate("z", "A");
-int x2 = Coordinate("x", "B");
-int y2 = Coordinate("y", "B");
-int z2 = Coordinate("z", "B");
+int x1 = Coord("x", "A");
+int y1 = Coord("y", "A");
+int z1 = Coord("z", "A");
+int x2 = Coord("x", "B");
+int y2 = Coord("y", "B");
+int z2 = Coord("z", "B");
 
-int Coordinate(string coorName, string pointName)
+int Coord(string coorName, string pointName)
 {
     Console.Write($"Введите координату {coorName} точки {pointName}: ");
     return Convert.ToInt16(Console.ReadLine());
 }
 
-double Decision(double x1, double x2, 
+double Dec(double x1, double x2, 
                 double y1, double y2, 
                 double z1, double z2){
   return Math.Sqrt(Math.Pow((x2-x1), 2) + 
@@ -22,6 +21,6 @@ double Decision(double x1, double x2,
                    Math.Pow((z2-z1), 2));
 }
 
-double segmentLength =  Math.Round (Decision(x1, x2, y1, y2, z1, z2), 2 );
+double segmentLength =  Math.Round (Dec(x1, x2, y1, y2, z1, z2), 2 );
 
 Console.WriteLine($"Длина отрезка  {segmentLength}");
